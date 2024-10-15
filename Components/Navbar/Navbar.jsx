@@ -83,7 +83,7 @@ const Navbar = () => {
             onClick={() => handleSectionChange("portfolio")}
             className={styles.anchor}
           >
-            Portfolio
+            Projects
           </a>
         </li>
         <li

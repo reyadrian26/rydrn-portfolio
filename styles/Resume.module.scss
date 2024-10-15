@@ -265,12 +265,12 @@ $secondary-color: var(--secondary-color);
     gap: 10px;
   }
 
-  @media (max-width: 426px) {
-    gap: 0px;
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 
   @media (max-width: 426px) {
-    flex-direction: column;
+    gap: 0px;
   }
 
   @media (max-width: 426px) {
