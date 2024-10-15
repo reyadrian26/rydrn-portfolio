@@ -1,0 +1,170 @@
+$bg-color: #00000087;
+$text-color: #f2f2f2;
+
+.slideText,
+.slideNumber {
+  color: $text-color;
+  background: $bg-color;
+  padding: 8px 12px;
+  position: absolute;
+}
+
+.slideText {
+  font-size: 15px;
+  font-weight: 600;
+  bottom: -10px;
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 1020px) {
+    bottom: 11px;
+    right: 0.5px;
+  }
+
+  @media (max-width: 600px) {
+    bottom: 15px;
+  }
+}
+
+.slideNumber {
+  font-size: 12px;
+  top: -18px;
+  font-weight: 600;
+  z-index: 1;
+  left: -30px;
+  border-top-left-radius: 14px;
+
+  @media (max-width: 1020px) {
+    top: 2px;
+    left: -10px;
+  }
+
+  @media (max-width: 600px) {
+    top: 8px;
+    left: -1px;
+  }
+}
+
+.slideContainer {
+  top: 40px;
+  max-width: 800px;
+  position: relative;
+  margin: 50px auto 30px;
+  opacity: 0;
+}
+
+.centerPortfolio {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  h3 {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin: 50px auto 30px;
+    text-align: center;
+
+    @media (max-width: 1430px) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+
+  @media (max-width: 830px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.rightArrow,
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 16px;
+  background: $bg-color;
+  border-radius: 0 3px 3px 0;
+
+  &.leftArrow {
+    left: -20px;
+
+    @media (max-width: 1020px) {
+      left: -10px;
+    }
+
+    @media (max-width: 600px) {
+      left: 5px;
+    }
+  }
+
+  &.rightArrow {
+    right: -20px;
+
+    @media (max-width: 1020px) {
+      right: -10px;
+    }
+
+    @media (max-width: 600px) {
+      right: 5px;
+    }
+  }
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+
+  &.active {
+    opacity: 1;
+    transition-duration: 1s;
+
+    .image {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 1020px) {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.animateSliderContainer {
+  animation: sliderContainerAnimation 1s ease 0.5s 1 normal forwards;
+}
+
+@keyframes sliderContainerAnimation {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

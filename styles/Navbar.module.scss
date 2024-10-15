@@ -1,0 +1,169 @@
+$main-color: #fb9535;
+$text-color: black;
+
+.nav {
+  width: 100%;
+  background: white;
+  color: $text-color;
+  padding: 10px 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  opacity: 0;
+
+  @media (max-width: 1430px) {
+    padding: 25px 3%;
+  }
+}
+
+.logo {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.span {
+  color: $main-color;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+
+  .anchor {
+    padding: 10px 20px;
+    color: $text-color;
+    font-weight: 600;
+    font-size: 1rem;
+
+    &:hover {
+      transition: 0.3s;
+      color: $main-color;
+    }
+  }
+
+  .active a {
+    color: $main-color;
+  }
+
+  .active.contactBtn a {
+    color: white;
+  }
+
+  @media (max-width: 830px) {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #d7dff7;
+    box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 70);
+    text-align: left;
+    transition: 0.2s ease;
+    align-items: start;
+
+    &.active {
+      top: 100%;
+    }
+
+    a {
+      display: block;
+      padding: 1rem;
+      border-left: 0px solid $main-color;
+      border-radius: 5px;
+      margin: 1rem;
+    }
+
+    .contactBtn {
+      background: none;
+
+      &:hover {
+        background: none;
+      }
+
+      a {
+        color: black !important;
+
+        &:hover {
+          transition: 0.3s;
+          color: $main-color !important;
+        }
+      }
+    }
+
+    .active a {
+      color: $main-color !important;
+    }
+  }
+}
+
+.contactBtn {
+  background-color: $main-color;
+  padding: 10px 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+
+  &:hover {
+    background-color: darken($main-color, 10%);
+    transition: 0.3s;
+    color: white;
+  }
+
+  a {
+    color: white !important;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  a .active {
+    color: white;
+  }
+}
+
+.menuicon {
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+  font-size: 28px;
+
+  @media (max-width: 830px) {
+    display: block;
+  }
+}
+
+.animateNavbarContainer {
+  animation: navbar-animation 1s ease 1s 1 normal forwards;
+}
+
+@keyframes navbar-animation {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

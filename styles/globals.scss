@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$main-color: #fb9535;
+$secondary-color: #000000;
+$bg-color: #edf1fd;
+$text-color: rgb(3, 3, 3);
+$big-font: 3rem;
+$h2-font: 1.9rem;
+$p-font: 1rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+}
+
+:root {
+  --main-color: #{$main-color};
+  --secondary-color: #{$secondary-color};
+  --bg-color: #{$bg-color};
+  --text-color: #{$text-color};
+  --big-font: #{$big-font};
+  --h2-font: #{$h2-font};
+  --p-font: #{$p-font};
+}
+
+body {
+  background: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+section {
+  padding: 110px 14%;
+
+  @media (max-width: 1430px) {
+    padding: 50px 9% !important;
+  }
+}
+
+@media (max-width: 1020px) {
+  :root {
+    --big-font: 3rem;
+    --h2-font: 1.2rem;
+    --p-font: 0.9rem;
+  }
+}
+
+@media (max-width: 795px) {
+  :root {
+    --big-font: 2.5rem;
+  }
+}

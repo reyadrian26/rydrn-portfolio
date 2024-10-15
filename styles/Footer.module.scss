@@ -1,0 +1,90 @@
+$footer-color: rgb(43, 43, 43);
+$footer-background: rgba(0, 0, 0, 0.274);
+$footer-text-color: rgba(43, 43, 43, 0.751);
+$footer-link-hover-color: #fb9535;
+$bg-color: #edf1fd;
+
+.footer {
+  font-size: 15px;
+  padding: 0;
+  color: $footer-color;
+  background: $footer-background;
+
+  .footerData.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .footerText {
+      color: $footer-text-color;
+      font-size: 15px;
+    }
+  }
+
+  .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 150px 40px 90px;
+
+    @media (max-width: 1020px), (max-width: 830px) {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    @media (max-width: 795px) {
+      padding: 30px;
+    }
+  }
+
+  .footerLink {
+    color: $footer-text-color;
+    margin-right: 10px;
+    transition: ease all 0.35s;
+
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  .footerSocial .fa-brands,
+  .socialIcon {
+    transition: ease all 0.35s;
+
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  .fbIcon,
+  .igIcon,
+  .linkedIcon {
+    margin-right: 10px;
+    font-size: 30px;
+    color: $footer-text-color;
+
+    &.fbIcon:hover {
+      color: #1a6ed8;
+    }
+
+    &.igIcon:hover {
+      color: #c13584;
+    }
+
+    &.linkedIcon:hover {
+      color: #0a66c2;
+    }
+  }
+}
+
+.footerTitle {
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg-color;
+}

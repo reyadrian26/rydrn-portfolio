@@ -1,0 +1,157 @@
+@mixin button-styles {
+  background: var(--main-color);
+  color: var(--text-color);
+  padding: 0 15px;
+  line-height: 42px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  transition: ease all 0.35s;
+
+  &:hover {
+    font-weight: 600;
+    background: #d7dff7;
+    color: var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.home {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding-top: 100px;
+  grid-gap: 6rem;
+  padding: 110px 14%;
+
+  @media (max-width: 1430px) {
+    padding-top: 150px !important;
+  }
+
+  @media (max-width: 795px) {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    text-align: center;
+    margin-top: 80px;
+    height: 100vh;
+    margin-top: 1px;
+  }
+}
+
+.homeImg {
+  opacity: 0;
+}
+
+.img1 {
+  margin-top: 15px;
+  max-width: 90%;
+  height: auto;
+  width: 600px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    max-width: 60%;
+    width: 60%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 426px) {
+    display: none;
+  }
+
+
+}
+
+.homeText {
+  opacity: 0;
+
+  h5 {
+    margin-top: -70px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 25px;
+
+    @media (max-width: 795px) {
+      margin-top: 0px;
+    }
+  }
+
+  h1 {
+    font-size: var(--big-font);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin: 0 0 20px;
+  }
+
+  h6 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: var(--text-color);
+  }
+
+  p {
+    max-width: 470px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+
+    @media (max-width: 795px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.btn {
+  @include button-styles;
+}
+
+.span {
+  color: var(--main-color);
+}
+
+.animateHomeText {
+  animation: homeText-animation 1s ease 1s 1 normal forwards;
+}
+
+@keyframes homeText-animation {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animateHomeImg {
+  animation: homeImg-animation 1s ease 1s 1 normal forwards;
+}
+
+@keyframes homeImg-animation {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
