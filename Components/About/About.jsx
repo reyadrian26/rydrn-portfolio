@@ -26,7 +26,7 @@ const About = () => {
             Contact Me
           </a>
           <a
-            href="/files/RESUME - REY ADRIAN INDAY.pdf"
+            href="../../public/files/RESUME - REY ADRIAN INDAY.pdf"
             download
             className={styles.btn}
           >
